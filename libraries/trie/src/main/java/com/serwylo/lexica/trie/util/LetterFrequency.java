@@ -102,10 +102,10 @@ public class LetterFrequency {
             String letterWithSuffix = language.applyMandatorySuffix(letter);
 
             if (shouldInclude(word, i)) {
-                if (!counts.containsKey(letterWithSuffix)) {
+                if (!counts.containsKey(letter)) {
                     counts.put(letter, 1);
                 } else {
-                    counts.put(letter, counts.get(letterWithSuffix) + 1);
+                    counts.put(letter, counts.get(letter) + 1);
                 }
             }
 
@@ -113,7 +113,6 @@ public class LetterFrequency {
                 i += letterWithSuffix.length() - 1;
             }
         }
-
         return counts;
     }
 
